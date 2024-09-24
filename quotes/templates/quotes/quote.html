@@ -1,0 +1,10 @@
+{% extends 'quotes/base.html' %}
+
+{% block title %}Random Quote{% endblock %}
+
+{% block content %}
+    <h1>Nicki Minaj Quote of the Day</h1>
+    <div class="quote">{{ quote }}</div>
+    <img class="image" src="{{ image }}" alt="Related Image">
+{% endblock %}
+
