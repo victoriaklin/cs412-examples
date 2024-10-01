@@ -1,0 +1,66 @@
+{% extends 'restaurant/base.html' %}
+
+{% block title %}Order Now{% endblock %}
+
+{% block content %}
+<h3>Place an Order</h3>
+<form method="POST" action="/restaurant/confirmation/">
+    {% csrf_token %}
+    
+    <p><strong>Select Your Items:</strong></p>
+    <label>
+        <input type="checkbox" name="taco"> Crunchy Taco - $2
+    </label>
+    <br><br>
+
+    <label>
+        <input type="checkbox" name="quesadilla"> Chicken Quesadilla - $5
+    </label>
+    <br><br>
+
+    <label>
+        <input type="checkbox" name="fries"> Nacho Fries - $3
+    </label>
+    <br><br>
+
+    <label>
+        <input type="checkbox" name="drink"> Pepsi - $2
+        <br>
+        Size:
+        <select name="drink_size">
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+        </select>
+    </label>
+    <br><br>
+
+    <p><strong>Today's Special</strong></p>
+    <div>
+        <input type="checkbox" id="daily_special" name="daily_special" value="{{ daily_special.price }}">
+        <label for="daily_special">{{ daily_special.name }} - ${{ daily_special.price }}</label><br>
+    </div>
+    <br><br>
+
+
+    <p><strong>Special Instructions</strong></p>
+    <p>Please share any special instructions:</p>
+    <textarea name="special_instructions" id="special_instructions"></textarea>
+    <br><br>
+
+    <p><strong>Customer Information</strong></p>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <br><br>
+
+    <label for="phone">Phone:</label>
+    <input type="tel" id="phone" name="phone" required>
+    <br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <br><br>
+    <p><strong>Place Your Order!</strong></p>
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

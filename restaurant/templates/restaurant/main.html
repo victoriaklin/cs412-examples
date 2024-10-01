@@ -1,0 +1,10 @@
+{% extends 'restaurant/base.html' %}
+{% load static %}
+
+{% block title %}Welcome to Our Restaurant{% endblock %}
+
+{% block content %}
+    <h1>Welcome!</h1>
+    <img src="{% static '/images/logo.jpeg' %}" alt="Restaurant Logo">
+    <p>Welcome to Taco Bell, the best fast food restaurant!</p>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Taco Bell{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Taco Bell</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'main' %}">Main Page</a></li>
+                <li><a href="{% url 'order' %}">Order Page</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>
