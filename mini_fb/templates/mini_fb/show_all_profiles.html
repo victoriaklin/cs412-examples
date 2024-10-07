@@ -1,7 +1,13 @@
+<!-- File: show_all_profiles.html
+Author: Victoria Lin (vicki@bu.edu), 10/7/2024
+Description: Renders the profile data -->
+
 {% extends "mini_fb/base.html" %}
 
 {% block content %}
 <h2>All Profiles</h2>
+
+<!-- Table to display the profiles -->
 <table>
     <thead>
         <tr>
@@ -11,10 +17,16 @@
         </tr>
     </thead>
     <tbody>
+        <!-- Loop through all profiles and display each one in a new row -->
         {% for profile in profiles %}
         <tr>
+            <!-- Display full name -->
             <td>{{ profile.first_name }} {{ profile.last_name }}</td>
+            
+            <!-- Display city -->
             <td>{{ profile.city }}</td>
+            
+            <!-- Display profile image -->
             <td><img src="{{ profile.profile_image_url }}" alt="{{ profile.first_name }}'s profile picture" width="100"></td>
         </tr>
         {% endfor %}
