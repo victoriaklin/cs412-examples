@@ -1,0 +1,21 @@
+{% load static %}
+<html>
+<head>
+    <title>Mini Facebook</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Mini Facebook</h1>
+    </header>
+
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <footer>
+        <p>Page created by vicki@bu.edu</p>
+    </footer>
+</body>
+</html>
